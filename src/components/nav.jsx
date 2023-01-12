@@ -40,16 +40,22 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: "16px",
 		lineHeight: "19px",
 		color: theme.palette.green[200],
+
+		"&:hover": {
+			fontWeight: 600,
+		},
 	},
 
-	icon: {
-		"&:hover": {},
+	logo: {
+		"&:hover": {
+			filter:
+				"invert(34%) sepia(73%) saturate(865%) hue-rotate(139deg) brightness(53%) contrast(102%)",
+		},
 	},
 }));
 
 export default function SideNav() {
 	const styles = useStyles();
-
 	const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
 	function mobileFooter() {
@@ -68,7 +74,8 @@ export default function SideNav() {
 					component="img"
 					alt="cloud bank logo"
 					src="../svg/smalllogo.svg"
-					width={"60px"}
+					width="60px"
+					className={styles.logo}
 				/>
 			</Stack>
 		);
@@ -84,6 +91,7 @@ export default function SideNav() {
 						src="../svg/cloudbank-1@2x.png"
 						width="150px"
 						mb={3}
+						className={styles.logo}
 					/>
 					<Stack justifyContent="space-between">
 						{navData.map((item, index) => (

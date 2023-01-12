@@ -2,6 +2,7 @@ import { Box, Grid, Stack, useMediaQuery } from "@mui/material";
 import React from "react";
 import SideNav from "../components/nav";
 import { makeStyles } from "@mui/styles";
+import { dataBox } from "../appTextData";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -32,55 +33,10 @@ const useStyles = makeStyles((theme) => ({
 		maxHeight: "150px",
 		[theme.breakpoints.down("md")]: {
 			width: "60%",
+			maxHeight: "100px",
 		},
 	},
 }));
-
-const dataBox = [
-	{
-		title: "One Month Loan",
-		description: "Access funds for personal upkeep for 30 days only",
-		icon: "../svg/oneMonth.svg",
-	},
-	{
-		title: "Working Capital Overdraft",
-		description:
-			"Access continuous funds to grow your business stocks and inventory",
-		icon: "../svg/working-capital-overdraft.svg",
-	},
-	{
-		title: "Operation Overdraft",
-		description: "Financing for your business operations",
-		icon: "../svg/operation-overdraft.svg",
-	},
-	{
-		title: "T and T Spread Loan",
-		description:
-			"Purchase phones, generators and vehicles on a reasonable payment plan from T and T Deals Market",
-		icon: "../svg/tt.svg",
-	},
-	{
-		title: "Infrastrusture Loan",
-		description: `	Facility for your business to purchase vehicles, assets, and building upgrades.`,
-		icon: "../svg/infrastructure.svg",
-	},
-	{
-		title: "Personal Loan",
-		description: "Instant funds for your personal expenses.",
-		icon: "../svg/personal.svg",
-	},
-	{
-		title: "Pawn Loan",
-		description:
-			"Get cash value on temporary sale of your items within 72hours.",
-		icon: "../svg/pawn.svg",
-	},
-	{
-		title: "FX Line",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-		icon: "../svg/frame-33.svg",
-	},
-];
 
 const LoanCategory = () => {
 	const styles = useStyles();

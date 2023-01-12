@@ -51,28 +51,7 @@ export default createTheme({
 			light: "#f5f6f9",
 			dark: "#7c74e9",
 		},
-		blue: {
-			100: "#66c3fa",
-			200: "#269afc",
-			300: "#B9E9F2",
-		},
-		grey: {
-			100: "#f5f6f9",
-			200: "#f6f7f8",
-			300: "#c1c9de",
-			400: "#727998",
-			500: "#838484",
-			600: "#7c7c7c",
-			700: "#434343",
-			800: "#111",
-		},
-		secondary: {
-			main: "#fac8ab",
-		},
 
-		pink: {
-			main: "#d2c3f2",
-		},
 		white: {
 			main: "#fff",
 		},

@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 		color: theme.palette.green[200],
 
 		"&:hover": {
-			fontWeight: 600,
+			fontWeight: 800,
 		},
 	},
 

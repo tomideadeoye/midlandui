@@ -1,6 +1,5 @@
 {
 	"name": "midlandui",
-	"homepage": "https://tomideadeoye.github.io/midlandui",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {

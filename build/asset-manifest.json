@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/midlandui/static/css/main.c6d4fe25.css",
-    "main.js": "/midlandui/static/js/main.c232c159.js",
-    "index.html": "/midlandui/index.html",
-    "main.c6d4fe25.css.map": "/midlandui/static/css/main.c6d4fe25.css.map",
-    "main.c232c159.js.map": "/midlandui/static/js/main.c232c159.js.map"
+    "main.css": "./static/css/main.c6d4fe25.css",
+    "main.js": "./static/js/main.3198231f.js",
+    "index.html": "./index.html",
+    "main.c6d4fe25.css.map": "./static/css/main.c6d4fe25.css.map",
+    "main.3198231f.js.map": "./static/js/main.3198231f.js.map"
   },
   "entrypoints": [
     "static/css/main.c6d4fe25.css",
-    "static/js/main.c232c159.js"
+    "static/js/main.3198231f.js"
   ]
 }

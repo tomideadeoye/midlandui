@@ -3,6 +3,7 @@ import React from "react";
 import SideNav from "../components/nav";
 import { makeStyles } from "@mui/styles";
 import { dataBox } from "../appTextData";
+import { PageTransition } from "../components/animations";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -42,55 +43,60 @@ const LoanCategory = () => {
 	const styles = useStyles();
 	const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
 	return (
-		<Stack direction={isMobile ? "column" : "row"} className={styles.container}>
-			<SideNav />
-			<Stack p={3} spacing={2}>
-				<h1 className={styles.loans}>Loans</h1>
+		<PageTransition>
+			<Stack
+				direction={isMobile ? "column" : "row"}
+				className={styles.container}
+			>
+				<SideNav />
+				<Stack p={3} spacing={2}>
+					<h1 className={styles.loans}>Loans</h1>
 
-				<Stack direction="row" alignItems="center">
-					<p className={styles.day}>Monday</p>
-					<span className={styles.date}>, 21st February, 2021</span>
+					<Stack direction="row" alignItems="center">
+						<p className={styles.day}>Monday</p>
+						<span className={styles.date}>, 21st February, 2021</span>
+					</Stack>
+
+					<Box>
+						<Grid
+							container
+							spacing={2}
+							sx={{
+								height: "100%",
+							}}
+						>
+							{dataBox.map((item, index) => (
+								<Grid item xs={6} sm={6} md={4} lg={3} key={index} spacing={2}>
+									<Stack className={styles.itemBox}>
+										<Box
+											component="img"
+											className={styles.icon}
+											src={item.icon}
+										/>
+										<Box
+											textAlign="center"
+											className={styles.title}
+											sx={isMobile && { fontSize: ".8rem" }}
+										>
+											{item.title}
+										</Box>
+										<Box
+											component="p"
+											className={styles.description}
+											maxWidth="80%"
+											textAlign="center"
+											sx={isMobile && { fontSize: ".8rem" }}
+										>
+											{item.description}
+										</Box>
+									</Stack>
+								</Grid>
+							))}
+						</Grid>
+					</Box>
 				</Stack>
-
-				<Box>
-					<Grid
-						container
-						spacing={2}
-						sx={{
-							height: "100%",
-						}}
-					>
-						{dataBox.map((item, index) => (
-							<Grid item xs={6} sm={6} md={4} lg={3} key={index} spacing={2}>
-								<Stack className={styles.itemBox}>
-									<Box
-										component="img"
-										className={styles.icon}
-										src={item.icon}
-									/>
-									<Box
-										textAlign="center"
-										className={styles.title}
-										sx={isMobile && { fontSize: ".8rem" }}
-									>
-										{item.title}
-									</Box>
-									<Box
-										component="p"
-										className={styles.description}
-										maxWidth="80%"
-										textAlign="center"
-										sx={isMobile && { fontSize: ".8rem" }}
-									>
-										{item.description}
-									</Box>
-								</Stack>
-							</Grid>
-						))}
-					</Grid>
-				</Box>
 			</Stack>
-		</Stack>
+		</PageTransition>
 	);
 };
 

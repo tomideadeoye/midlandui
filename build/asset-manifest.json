@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/midlandui/static/css/main.c6d4fe25.css",
+    "main.js": "/midlandui/static/js/main.c232c159.js",
+    "index.html": "/midlandui/index.html",
+    "main.c6d4fe25.css.map": "/midlandui/static/css/main.c6d4fe25.css.map",
+    "main.c232c159.js.map": "/midlandui/static/js/main.c232c159.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6d4fe25.css",
+    "static/js/main.c232c159.js"
+  ]
+}

@@ -1,13 +1,10 @@
+# MIDLAND UI by Tomide Adeoye
 
-  # Juice UI by Tomide Adeoye
-
-Everything you need for reliable global payments
+Cloud Banks
 
 Built with React and MUI
 
+<img width="1440" alt="Screenshot 2023-01-12 at 18 15 46" src="https://user-images.githubusercontent.com/55337742/212135044-a52e6885-f3df-45d6-b435-eb784835a387.png">
 
-https://user-images.githubusercontent.com/55337742/211080250-419b92a5-7ef0-423a-be4a-2e0658dca314.mov
-
-<img width="1440" alt="Screenshot 2023-01-06 at 19 59 08" src="https://user-images.githubusercontent.com/55337742/211080927-f67c17ee-1cab-4883-a2f0-8947b67bddd6.png">
 
 

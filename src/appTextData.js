@@ -29,7 +29,7 @@ const navData = [
 	},
 	{
 		title: "Settings",
-		icon: "../svg/settings-fill-1.svg",
+		icon: "../svg/settings-line.svg",
 	},
 ];
 

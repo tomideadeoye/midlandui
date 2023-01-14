@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -11,7 +12,6 @@ import theme from "../assets/theme";
 import MenuIcon from "@mui/icons-material/Menu";
 import { navData } from "../appTextData";
 import { makeStyles } from "@mui/styles";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
 	BackdropProps: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 	link: theme.links,
 }));
 
-export default function CustomDrawer() {
+export default function CustomDrawer({ setActivePage }) {
 	const [state, setState] = React.useState({
 		right: false,
 	});
@@ -52,11 +52,10 @@ export default function CustomDrawer() {
 				{navData.map((item) => (
 					<Box key={item.title}>
 						<ListItem key={item.title} disablePadding>
-							<ListItemButton>
+							<ListItemButton onClick={setActivePage(item.title)}>
 								<Box src={item.icon} component="img" mr={3} />
-								<Link className={classes.link}>
-									<ListItemText primary={item.title} />
-								</Link>
+
+								<ListItemText primary={item.title} />
 							</ListItemButton>
 						</ListItem>
 						<Divider />

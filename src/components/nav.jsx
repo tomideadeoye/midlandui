@@ -67,7 +67,7 @@ export default function SideNav({ activePage, setActivePage }) {
 				padding={2}
 				maxWidth="60%"
 			>
-				<CustomDrawer />
+				<CustomDrawer activePage={activePage} setActivePage={setActivePage} />
 				<AnimationMakerButton>
 					<Box
 						component="img"

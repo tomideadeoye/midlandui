@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useMediaQuery } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 
@@ -24,11 +25,12 @@ export function PageTransition({ children }) {
 }
 
 export function AnimationMakerButton({ children }) {
+	const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
 	return (
 		<motion.div
 			className="box"
-			whileHover={{ scale: 1.1 }}
-			whileTap={{ scale: 0.9 }}
+			whileHover={!isMobile && { scale: 1.1 }}
+			whileTap={!isMobile && { scale: 0.9 }}
 			transition={{ type: "spring", stiffness: 400, damping: 17 }}
 		>
 			{children}

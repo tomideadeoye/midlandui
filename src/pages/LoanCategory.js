@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
 			boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.25)",
 		},
 		[theme.breakpoints.down("md")]: {
-			minHeight: "23rem",
+			height: "fit-content",
+			minHeight: "22rem",
 		},
 	},
 	description: theme.typography.h4,
@@ -64,14 +65,16 @@ const LoanCategory = () => {
 					<Box>
 						<Grid
 							container
-							spacing={4}
+							spacing={{
+								xs: 2,
+								md: 4,
+							}}
 							sx={{
 								height: "100%",
 							}}
 						>
 							{dataBox.map((item, index) => (
 								<Grid item xs={6} sm={6} md={4} lg={3} key={index}>
-									{" "}
 									<AnimationMakerButton>
 										<Stack className={styles.itemBox}>
 											<Box
@@ -91,7 +94,9 @@ const LoanCategory = () => {
 												className={styles.description}
 												maxWidth="80%"
 												textAlign="center"
-												sx={isMobile && { fontSize: ".8rem" }}
+												sx={
+													isMobile && { fontSize: ".8rem", lineHeight: "20px" }
+												}
 											>
 												{item.description}
 											</Box>

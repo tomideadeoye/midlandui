@@ -35,3 +35,17 @@ export function AnimationMakerButton({ children }) {
 		</motion.div>
 	);
 }
+
+export function LogoAnimator({ children }) {
+	return (
+		<motion.div
+			initial={{ opacity: 0, scale: 0.5 }}
+			whileHover={{
+				opacity: 1,
+				scale: 1,
+			}}
+		>
+			{children}
+		</motion.div>
+	);
+}

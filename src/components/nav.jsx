@@ -3,6 +3,7 @@ import { makeStyles } from "@mui/styles";
 import { Box, Stack, useMediaQuery } from "@mui/material";
 import { navData } from "../appTextData";
 import CustomDrawer from "./drawer";
+import { AnimationMakerButton } from "./animations";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -22,17 +23,20 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(1, 1, 1, 1),
 		borderRadius: "10px",
 		cursor: "pointer",
+	},
+	activeNav: {
+		padding: theme.spacing(1, 1, 1, 1),
+		borderRadius: "10px",
+		cursor: "pointer",
+		background: theme.palette.green[100],
+		"& > img": {
+			filter:
+				"invert(34%) sepia(73%) saturate(865%) hue-rotate(139deg) brightness(53%) contrast(102%)",
 
-		"&:hover": {
-			background: theme.palette.green[100],
-			"& > img": {
-				filter:
-					"invert(34%) sepia(73%) saturate(865%) hue-rotate(139deg) brightness(53%) contrast(102%)",
-
-				fill: theme.palette.green[200],
-			},
+			fill: theme.palette.green[200],
 		},
 	},
+
 	navText: {
 		fontFamily: "Roboto",
 		fontStyle: "normal",
@@ -47,16 +51,18 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	logo: {
-		"&:hover": {
-			filter:
-				"invert(34%) sepia(73%) saturate(865%) hue-rotate(139deg) brightness(53%) contrast(102%)",
-		},
+		// "&:hover": {
+		// 	filter:
+		// 		"invert(34%) sepia(73%) saturate(865%) hue-rotate(139deg) brightness(53%) contrast(102%)",
+		// },
 	},
 }));
 
 export default function SideNav() {
 	const styles = useStyles();
 	const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
+
+	const [activePage, setActivePage] = React.useState("Home");
 
 	function mobileFooter() {
 		return (
@@ -70,13 +76,15 @@ export default function SideNav() {
 				maxWidth="60%"
 			>
 				<CustomDrawer />
-				<Box
-					component="img"
-					alt="cloud bank logo"
-					src="../svg/smalllogo.svg"
-					width="60px"
-					className={styles.logo}
-				/>
+				<AnimationMakerButton>
+					<Box
+						component="img"
+						alt="cloud bank logo"
+						src="../svg/smalllogo.svg"
+						width="60px"
+						className={styles.logo}
+					/>
+				</AnimationMakerButton>
 			</Stack>
 		);
 	}
@@ -93,24 +101,31 @@ export default function SideNav() {
 						mb={3}
 						className={styles.logo}
 					/>
+
 					<Stack justifyContent="space-between">
 						{navData.map((item, index) => (
-							<Stack
-								key={index}
-								alignItems="center"
-								direction="row"
-								className={styles.navItem}
-								spacing={1}
-							>
-								<Box
-									component="img"
-									className={styles.icon}
-									src={item.icon}
-									alt={item.title}
-								/>
+							<AnimationMakerButton key={index}>
+								<Stack
+									alignItems="center"
+									direction="row"
+									className={
+										activePage === item.title
+											? styles.activeNav
+											: styles.navItem
+									}
+									spacing={1}
+									onClick={() => setActivePage(item.title)}
+								>
+									<Box
+										component="img"
+										className={styles.icon}
+										src={item.icon}
+										alt={item.title}
+									/>
 
-								<p className={styles.navText}>{item.title}</p>
-							</Stack>
+									<p className={styles.navText}>{item.title}</p>
+								</Stack>
+							</AnimationMakerButton>
 						))}
 					</Stack>
 				</Stack>

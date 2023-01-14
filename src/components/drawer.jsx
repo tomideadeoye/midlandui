@@ -50,7 +50,7 @@ export default function CustomDrawer() {
 		>
 			<List>
 				{navData.map((item) => (
-					<>
+					<Box key={item.title}>
 						<ListItem key={item.title} disablePadding>
 							<ListItemButton>
 								<Box src={item.icon} component="img" mr={3} />
@@ -60,7 +60,7 @@ export default function CustomDrawer() {
 							</ListItemButton>
 						</ListItem>
 						<Divider />
-					</>
+					</Box>
 				))}
 			</List>
 		</Box>

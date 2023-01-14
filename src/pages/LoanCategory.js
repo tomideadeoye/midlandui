@@ -3,7 +3,7 @@ import React from "react";
 import SideNav from "../components/nav";
 import { makeStyles } from "@mui/styles";
 import { dataBox } from "../appTextData";
-import { PageTransition } from "../components/animations";
+import { AnimationMakerButton, PageTransition } from "../components/animations";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -49,7 +49,7 @@ const LoanCategory = () => {
 				className={styles.container}
 			>
 				<SideNav />
-				<Stack p={3} spacing={2}>
+				<Stack p={3} spacing={3}>
 					<h1 className={styles.loans}>Loans</h1>
 
 					<Stack direction="row" alignItems="center">
@@ -66,30 +66,33 @@ const LoanCategory = () => {
 							}}
 						>
 							{dataBox.map((item, index) => (
-								<Grid item xs={6} sm={6} md={4} lg={3} key={index} spacing={2}>
-									<Stack className={styles.itemBox}>
-										<Box
-											component="img"
-											className={styles.icon}
-											src={item.icon}
-										/>
-										<Box
-											textAlign="center"
-											className={styles.title}
-											sx={isMobile && { fontSize: ".8rem" }}
-										>
-											{item.title}
-										</Box>
-										<Box
-											component="p"
-											className={styles.description}
-											maxWidth="80%"
-											textAlign="center"
-											sx={isMobile && { fontSize: ".8rem" }}
-										>
-											{item.description}
-										</Box>
-									</Stack>
+								<Grid item xs={6} sm={6} md={4} lg={3} key={index}>
+									{" "}
+									<AnimationMakerButton>
+										<Stack className={styles.itemBox}>
+											<Box
+												component="img"
+												className={styles.icon}
+												src={item.icon}
+											/>
+											<Box
+												textAlign="center"
+												className={styles.title}
+												sx={isMobile && { fontSize: ".8rem" }}
+											>
+												{item.title}
+											</Box>
+											<Box
+												component="p"
+												className={styles.description}
+												maxWidth="80%"
+												textAlign="center"
+												sx={isMobile && { fontSize: ".8rem" }}
+											>
+												{item.description}
+											</Box>
+										</Stack>
+									</AnimationMakerButton>
 								</Grid>
 							))}
 						</Grid>

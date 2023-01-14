@@ -4,6 +4,7 @@ import SideNav from "../components/nav";
 import { makeStyles } from "@mui/styles";
 import { dataBox } from "../appTextData";
 import { AnimationMakerButton, PageTransition } from "../components/animations";
+import moment from "moment";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
@@ -42,25 +43,28 @@ const useStyles = makeStyles((theme) => ({
 const LoanCategory = () => {
 	const styles = useStyles();
 	const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
+	const [activePage, setActivePage] = React.useState("Home");
 	return (
 		<PageTransition>
 			<Stack
 				direction={isMobile ? "column" : "row"}
 				className={styles.container}
 			>
-				<SideNav />
+				<SideNav activePage={activePage} setActivePage={setActivePage} />
 				<Stack p={3} spacing={3}>
-					<h1 className={styles.loans}>Loans</h1>
+					<h1 className={styles.loans}>{activePage}</h1>
 
 					<Stack direction="row" alignItems="center">
-						<p className={styles.day}>Monday</p>
-						<span className={styles.date}>, 21st February, 2021</span>
+						<p className={styles.day}>{moment().format("dddd")}</p>
+						<span className={styles.date}>
+							, {moment().format("MMMM Do YYYY")}
+						</span>
 					</Stack>
 
 					<Box>
 						<Grid
 							container
-							spacing={2}
+							spacing={4}
 							sx={{
 								height: "100%",
 							}}

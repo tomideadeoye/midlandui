@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import { Box, Stack, useMediaQuery } from "@mui/material";
@@ -49,20 +50,11 @@ const useStyles = makeStyles((theme) => ({
 			fontWeight: 800,
 		},
 	},
-
-	logo: {
-		// "&:hover": {
-		// 	filter:
-		// 		"invert(34%) sepia(73%) saturate(865%) hue-rotate(139deg) brightness(53%) contrast(102%)",
-		// },
-	},
 }));
 
-export default function SideNav() {
+export default function SideNav({ activePage, setActivePage }) {
 	const styles = useStyles();
 	const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
-
-	const [activePage, setActivePage] = React.useState("Home");
 
 	function mobileFooter() {
 		return (

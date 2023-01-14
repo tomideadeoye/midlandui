@@ -51,8 +51,14 @@ export default function CustomDrawer({ setActivePage }) {
 			<List>
 				{navData.map((item) => (
 					<Box key={item.title}>
-						<ListItem key={item.title} disablePadding>
-							<ListItemButton onClick={setActivePage(item.title)}>
+						<ListItem
+							key={item.title}
+							disablePadding
+							onClick={() => {
+								setActivePage(item.title);
+							}}
+						>
+							<ListItemButton>
 								<Box src={item.icon} component="img" mr={3} />
 
 								<ListItemText primary={item.title} />
